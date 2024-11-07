@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a la aplicación</h1>
+    <p>Este es el inicio de tu aplicación Django.</p>
+    <a href="{% url 'register_admin' %}">Registrar Admin</a>
+    <a href="{% url 'admin_login' %}">Iniciar Sesión</a>
+    <a href="{% url 'admin_dashboard' %}">Dashboard Admin</a>
+</body>
+</html>
