@@ -6,7 +6,7 @@ from .forms import CustomUserCreationForm
 
 # Vista para la página de inicio
 def home(request):
-    return render(request, 'home.html')  # Asegúrate de tener esta plantilla creada
+    return render(request, 'usuarios/home.html')  # Usando la ruta completa de la plantilla
 
 def register_admin(request):
     if request.method == 'POST':
@@ -20,7 +20,7 @@ def register_admin(request):
             return redirect('home')  # Asegúrate de que 'home' esté definido en tus URLs
     else:
         form = CustomUserCreationForm()
-    return render(request, 'accounts/register.html', {'form': form})
+    return render(request, 'usuarios/register_admin.html', {'form': form})  # Cambiado a la ruta correcta
 
 def admin_login(request):
     if request.method == 'POST':
@@ -34,7 +34,7 @@ def admin_login(request):
                 return redirect('home')  # Asegúrate de que 'home' esté definido en tus URLs
     else:
         form = AuthenticationForm()
-    return render(request, 'accounts/login.html', {'form': form})
+    return render(request, 'usuarios/admin_login.html', {'form': form})  # Cambiado a la ruta correcta
 
 def admin_dashboard(request):
-    return render(request, 'accounts/dashboard.html')  # Asegúrate de crear este template
+    return render(request, 'usuarios/admin_dashboard.html')  # Cambiado a la ruta correcta
